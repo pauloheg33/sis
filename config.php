@@ -1,8 +1,8 @@
 <?php
 $host = 'localhost';
-$db   = 'sis';      // Troque pelo nome do seu banco de dados
-$user = 'root';     // Troque se seu usuário for diferente
-$pass = '';         // Troque se sua senha não for vazia
+$db   = 'sis';
+$user = 'root';
+$pass = '';
 $charset = 'utf8mb4';
 
 $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
