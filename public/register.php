@@ -54,20 +54,41 @@ $schools = $pdo->query('SELECT id, name FROM schools')->fetchAll();
             text-shadow: 0 2px 12px rgba(229,57,53,0.10);
             font-family: 'Poppins', sans-serif;
         }
-        select, #role, #school_id {
-            padding: 0.9rem;
-            border: 3px solid #007acc; /* borda mais grossa */
+        /* Reduza o gap entre os elementos do formulário */
+        .login-left form {
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem; /* era 1.2rem ou mais, agora menor */
+            margin-top: 0.7rem;
+        }
+
+        /* Reduza o padding dos inputs e selects */
+        input,
+        select,
+        #role,
+        #school_id {
+            padding: 0.6rem 0.8rem;
+            border: 3px solid #007acc;
             border-radius: 8px;
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             background: #f7fafd;
             width: 100%;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.3rem; /* era 0.5rem */
             font-weight: 600;
             transition: border 0.2s;
         }
-        select:focus, #role:focus, #school_id:focus {
-            border-color: #005fa3;
-            outline: none;
+
+        /* Reduza o espaçamento do botão */
+        button[type="submit"] {
+            margin-top: 0.7rem;
+            padding: 0.8rem 0;
+            font-size: 1.05rem;
+        }
+
+        /* Ajuste o título do formulário */
+        .login-left h2 {
+            margin-bottom: 0.7rem;
+            font-size: 1.5rem;
         }
     </style>
 </head>
