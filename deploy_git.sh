@@ -1,30 +1,31 @@
 #!/bin/bash
 
-# Script de deploy inicial no GitHub
-
 echo "🚀 Iniciando processo de versionamento..."
 
-# Verifica se já é um repositório Git
-if [ -d ".git" ]; then
-    echo "✅ Repositório Git já inicializado."
-else
+# Inicializa repositório se não existir
+if [ ! -d ".git" ]; then
     echo "📁 Inicializando repositório Git..."
     git init
+else
+    echo "✅ Repositório Git já inicializado."
 fi
 
-# Adiciona todos os arquivos
 git add .
-
-# Commit inicial
 git commit -m "Versão inicial do sistema de acompanhamento escolar (sis)"
-
-# Define a branch principal
 git branch -M main
 
-# Define o repositório remoto
-git remote add origin https://github.com/pauloheg33/sis
+# Verifica se o remote já existe
+if git remote | grep -q origin; then
+    echo "🔗 Remote 'origin' já existe."
+else
+    git remote add origin https://github.com/pauloheg33/sis.git
+    echo "🔗 Remote 'origin' adicionado."
+fi
 
-# Faz o push inicial
-git push -u origin main
-
-echo "✅ Projeto enviado com sucesso para o GitHub!"
+# Tenta fazer o push com orientação
+echo "📤 Enviando para o GitHub..."
+git push origin main || {
+    echo "❌ Push falhou. Execute manualmente:"
+    echo "   git pull origin main --allow-unrelated-histories"
+    echo "   git push origin main"
+}
