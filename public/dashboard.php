@@ -14,6 +14,7 @@ $school_id = $_SESSION['school_id'];
 <head>
     <meta charset="UTF-8">
     <title>Painel</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h1>Bem-vindo</h1>

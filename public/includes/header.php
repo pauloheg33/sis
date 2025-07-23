@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Teste CSS</title>
-  <link rel="stylesheet" href="/sis-main/public/assets/style.css">
+  <link rel="stylesheet" href="/sis-main/public/style.css">
 </head>
 <body>
   <h1>Teste de CSS</h1>
