@@ -87,8 +87,11 @@ if (isset($_SESSION['user_id'])) {
             display: flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(135deg, #007acc 0%, #00c6fb 100%);
+            background: linear-gradient(135deg, #00c6fb 0%, #007acc 100%);
             min-height: 350px;
+            border-top-right-radius: 18px;
+            border-bottom-right-radius: 18px;
+            box-shadow: -8px 0 32px rgba(0,0,0,0.08) inset;
         }
         .presentation-image img {
             width: 80%;
@@ -96,7 +99,7 @@ if (isset($_SESSION['user_id'])) {
             min-width: 220px;
             height: auto;
             filter: drop-shadow(0 4px 16px rgba(0,0,0,0.12));
-            border-radius: 18px; /* Cantos arredondados */
+            border-radius: 0;
         }
         @media (max-width: 900px) {
             .presentation-wrapper {
