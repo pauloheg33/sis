@@ -79,20 +79,20 @@ if (isset($_SESSION['user_id'])) {
       font-size: 0.95rem;
       color: #888;
     }
-    select {
+    select, #role, #school_id {
       padding: 0.9rem;
-      border: 1px solid #d0d7de;
+      border: 2.5px solid #007acc;
       border-radius: 8px;
       font-size: 1.1rem;
       background: #f7fafd;
       width: 100%;
       margin-bottom: 0.5rem;
+      font-weight: 600;
+      transition: border 0.2s;
     }
-    #role, #school_id {
-      padding: 0.9rem;
-      font-size: 1.1rem;
-      border-radius: 8px;
-      width: 100%;
+    select:focus, #role:focus, #school_id:focus {
+      border-color: #005fa3;
+      outline: none;
     }
     @media (max-width: 500px) {
       .login-wrapper {
