@@ -22,6 +22,18 @@ $schools = $pdo->query('SELECT id, name FROM schools')->fetchAll();
     <meta charset="UTF-8">
     <title>Cadastro</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .main-title {
+            text-align: center;
+            font-size: 3.2rem;
+            font-weight: 900;
+            color: #003366;
+            letter-spacing: 2.5px;
+            margin-bottom: 2.5rem;
+            text-shadow: 0 6px 32px rgba(0, 122, 204, 0.18), 0 2px 8px rgba(0,0,0,0.10);
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
 </head>
 <body>
 <div class="login-page">
