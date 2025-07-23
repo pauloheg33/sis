@@ -25,12 +25,33 @@ $schools = $pdo->query('SELECT id, name FROM schools')->fetchAll();
     <style>
         .main-title {
             text-align: center;
-            font-size: 3.2rem;
+            font-size: 3.4rem;
             font-weight: 900;
-            color: #003366;
+            background: linear-gradient(90deg, #005fa3 30%, #00c6fb 100%);
+            color: transparent;
+            -webkit-background-clip: text;
+            background-clip: text;
             letter-spacing: 2.5px;
-            margin-bottom: 2.5rem;
-            text-shadow: 0 6px 32px rgba(0, 122, 204, 0.18), 0 2px 8px rgba(0,0,0,0.10);
+            margin-bottom: 0.7rem;
+            font-family: 'Poppins', sans-serif;
+            /* Contorno escuro */
+            -webkit-text-stroke: 2px #222;
+            text-stroke: 2px #222;
+            /* Sombra reforçada */
+            text-shadow:
+                0 6px 32px rgba(0, 122, 204, 0.18),
+                0 2px 8px rgba(0,0,0,0.10),
+                1px 1px 2px #222,
+                -1px -1px 2px #222;
+        }
+        .main-subtitle {
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #e53935;
+            letter-spacing: 1.5px;
+            margin-bottom: 2.2rem;
+            text-shadow: 0 2px 12px rgba(229,57,53,0.10);
             font-family: 'Poppins', sans-serif;
         }
     </style>
@@ -38,6 +59,7 @@ $schools = $pdo->query('SELECT id, name FROM schools')->fetchAll();
 <body>
 <div class="login-page">
     <h1 class="main-title">SISTEMA DE ACOMPANHAMENTO ESCOLAR</h1>
+    <div class="main-subtitle">SECRETARIA DA EDUCAÇÃO DE ARARENDÁ</div>
     <div class="login-wrapper">
         <div class="login-left">
             <h2>Cadastro de Usuário</h2>
