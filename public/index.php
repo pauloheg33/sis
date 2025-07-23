@@ -96,6 +96,7 @@ if (isset($_SESSION['user_id'])) {
             min-width: 220px;
             height: auto;
             filter: drop-shadow(0 4px 16px rgba(0,0,0,0.12));
+            border-radius: 18px; /* Cantos arredondados */
         }
         @media (max-width: 900px) {
             .presentation-wrapper {
