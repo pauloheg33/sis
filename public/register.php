@@ -21,29 +21,44 @@ $schools = $pdo->query('SELECT id, name FROM schools')->fetchAll();
 <head>
     <meta charset="UTF-8">
     <title>Cadastro</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Cadastrar usuário</h1>
-    <form method="post">
-        <label>Nome: <input type="text" name="name" required></label><br>
-        <label>Email: <input type="email" name="email" required></label><br>
-        <label>Senha: <input type="password" name="password" required></label><br>
-        <label>Tipo:
-            <select name="role">
-                <option value="coordinator">Coordenador</option>
-                <option value="superintendent">Superintendente</option>
-                <option value="admin">Administrador</option>
-            </select>
-        </label><br>
-        <label>Escola:
-            <select name="school_id">
-                <option value="">-- selecione --</option>
-<?php foreach ($schools as $school): ?>
-                <option value="<?= $school['id'] ?>"><?= $school['name'] ?></option>
-<?php endforeach; ?>
-            </select>
-        </label><br>
-        <button type="submit">Cadastrar</button>
-    </form>
+<div class="login-page">
+    <h1 class="main-title">SISTEMA DE ACOMPANHAMENTO ESCOLAR</h1>
+    <div class="login-wrapper">
+        <div class="login-left">
+            <h2>Cadastro de Usuário</h2>
+            <form method="post">
+                <label for="name">Nome:</label>
+                <input type="text" name="name" id="name" required>
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email" required>
+                <label for="password">Senha:</label>
+                <input type="password" name="password" id="password" required>
+                <label for="role">Tipo:</label>
+                <select name="role" id="role">
+                    <option value="coordinator">Coordenador</option>
+                    <option value="superintendent">Superintendente</option>
+                    <option value="admin">Administrador</option>
+                </select>
+                <label for="school_id">Escola:</label>
+                <select name="school_id" id="school_id">
+                    <option value="">-- selecione --</option>
+                    <?php foreach ($schools as $school): ?>
+                        <option value="<?= $school['id'] ?>"><?= $school['name'] ?></option>
+                    <?php endforeach; ?>
+                </select>
+                <button type="submit">Cadastrar</button>
+            </form>
+            <div class="footer-text">
+                Já possui conta? <a href="index.php">Fazer login</a>
+            </div>
+        </div>
+        <div class="login-right">
+            <img src="assets/logo.png" alt="Logo do Sistema">
+        </div>
+    </div>
+</div>
 </body>
 </html>
