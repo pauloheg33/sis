@@ -90,6 +90,16 @@ $schools = $pdo->query('SELECT id, name FROM schools')->fetchAll();
             margin-bottom: 0.7rem;
             font-size: 1.5rem;
         }
+
+        .login-right img {
+            width: 80%;
+            max-width: 320px;
+            min-width: 180px;
+            filter: drop-shadow(0 4px 16px rgba(0,0,0,0.12));
+            border-radius: 18px; /* Cantos arredondados */
+            background: #fff;
+            padding: 1rem;
+        }
     </style>
 </head>
 <body>

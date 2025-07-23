@@ -53,56 +53,121 @@ if (isset($_SESSION['user_id'])) {
       background: linear-gradient(135deg, #007acc 0%, #00c6fb 100%);
     }
     .login-wrapper {
+      display: flex;
+      min-height: 60vh;
+      width: 900px;
+      max-width: 98vw;
       background: #fff;
       border-radius: 18px;
       box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+      overflow: hidden;
+      margin-top: 1.5rem;
+    }
+    .login-left {
+      flex: 1;
       padding: 2.5rem 2rem;
-      min-width: 340px;
-      max-width: 370px;
-      width: 98vw;
       display: flex;
       flex-direction: column;
+      justify-content: center;
+      background: #fff;
+    }
+    .login-right {
+      flex: 1;
+      background: linear-gradient(135deg, #007acc 0%, #00c6fb 100%);
+      display: flex;
       align-items: center;
+      justify-content: center;
+    }
+    .login-right img {
+      width: 80%;
+      max-width: 320px;
+      min-width: 180px;
+      filter: drop-shadow(0 4px 16px rgba(0,0,0,0.12));
+      border-radius: 12px;
+      background: #fff;
+      padding: 1rem;
     }
     .login-title {
       text-align: center;
       color: #007acc;
       font-size: 2rem;
       font-weight: 700;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.2rem;
       letter-spacing: 1px;
       text-shadow: 0 2px 8px rgba(0,122,204,0.08);
     }
-    .footer-text {
-      margin-top: 2rem;
-      text-align: center;
-      font-size: 0.95rem;
-      color: #888;
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+      margin-top: 0.7rem;
     }
-    select, #role, #school_id {
-      padding: 0.9rem;
+    label {
+      font-weight: 600;
+      color: #333;
+    }
+    input, select {
+      padding: 0.7rem 0.8rem;
       border: 2.5px solid #007acc;
       border-radius: 8px;
       font-size: 1.1rem;
       background: #f7fafd;
       width: 100%;
-      margin-bottom: 0.5rem;
       font-weight: 600;
       transition: border 0.2s;
     }
-    select:focus, #role:focus, #school_id:focus {
+    input:focus, select:focus {
       border-color: #005fa3;
       outline: none;
     }
-    @media (max-width: 500px) {
+    button[type="submit"] {
+      margin-top: 0.7rem;
+      padding: 0.9rem 0;
+      font-size: 1.1rem;
+      background: linear-gradient(90deg, #007acc 60%, #00c6fb 100%);
+      color: #fff;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      transition: background 0.3s, box-shadow 0.3s;
+    }
+    button[type="submit"]:hover {
+      background: linear-gradient(90deg, #005fa3 60%, #00a6d6 100%);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+    }
+    .footer-text {
+      margin-top: 1.2rem;
+      text-align: center;
+      font-size: 0.95rem;
+      color: #888;
+    }
+    .error {
+      color: #e53935;
+      background: #ffeaea;
+      border: 1px solid #e53935;
+      border-radius: 6px;
+      padding: 0.7rem 1rem;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+    @media (max-width: 900px) {
       .login-wrapper {
-        padding: 1.2rem 0.5rem;
-        min-width: unset;
-        max-width: 98vw;
+        flex-direction: column;
+        width: 98vw;
+        min-height: unset;
       }
-      .main-title {
-        font-size: 2rem;
+      .login-right {
+        display: none;
       }
+      .login-left {
+        padding: 2rem 1rem;
+      }
+    }
+    @media (max-width: 500px) {
+      .main-title { font-size: 2rem; }
+      .login-wrapper { padding: 0; }
     }
   </style>
 </head>
@@ -111,19 +176,24 @@ if (isset($_SESSION['user_id'])) {
     <div class="main-title">SISTEMA DE ACOMPANHAMENTO ESCOLAR</div>
     <div class="main-subtitle">SECRETARIA DA EDUCAÇÃO DE ARARENDÁ</div>
     <div class="login-wrapper">
-      <div class="login-title">Login no Sistema</div>
-      <?php if (isset($_GET['error'])): ?>
-        <div class="error">Usuário ou senha inválidos.</div>
-      <?php endif; ?>
-      <form action="login_process.php" method="POST">
-        <label for="email">Email:</label>
-        <input type="email" name="email" id="email" required>
-        <label for="senha">Senha:</label>
-        <input type="password" name="senha" id="senha" required>
-        <button type="submit">Entrar</button>
-      </form>
-      <div class="footer-text">
-        © 2023 Sistema de Acompanhamento. Todos os direitos reservados.
+      <div class="login-left">
+        <div class="login-title">Login no Sistema</div>
+        <?php if (isset($_GET['error'])): ?>
+          <div class="error">Usuário ou senha inválidos.</div>
+        <?php endif; ?>
+        <form action="login_process.php" method="POST">
+          <label for="email">Email:</label>
+          <input type="email" name="email" id="email" required>
+          <label for="senha">Senha:</label>
+          <input type="password" name="senha" id="senha" required>
+          <button type="submit">Entrar</button>
+        </form>
+        <div class="footer-text">
+          © 2023 Sistema de Acompanhamento. Todos os direitos reservados.
+        </div>
+      </div>
+      <div class="login-right">
+        <img src="assets/logo.png" alt="Logo do Sistema">
       </div>
     </div>
   </div>
