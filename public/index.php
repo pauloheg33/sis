@@ -38,13 +38,22 @@ if (isset($_SESSION['user_id'])) {
             justify-content: center;
         }
         .presentation-title {
-            font-size: 2.7rem;
+            font-size: 3.2rem;
             font-weight: 900;
-            color: #007acc;
-            letter-spacing: 2px;
+            background: linear-gradient(90deg, #005fa3 30%, #00c6fb 100%);
+            color: transparent;
+            -webkit-background-clip: text;
+            background-clip: text;
+            letter-spacing: 2.5px;
             margin-bottom: 1.5rem;
-            text-shadow: 0 4px 24px rgba(0, 122, 204, 0.08);
             font-family: 'Poppins', sans-serif;
+            -webkit-text-stroke: 2px #222;
+            text-stroke: 2px #222;
+            text-shadow:
+                0 6px 32px rgba(0, 122, 204, 0.18),
+                0 2px 8px rgba(0,0,0,0.10),
+                1px 1px 2px #222,
+                -1px -1px 2px #222;
         }
         .presentation-desc {
             font-size: 1.15rem;
@@ -107,7 +116,24 @@ if (isset($_SESSION['user_id'])) {
     <div class="presentation-page">
         <div class="presentation-wrapper">
             <div class="presentation-content">
-                <div class="presentation-title">SISTEMA DE ACOMPANHAMENTO ESCOLAR</div>
+                <div class="presentation-title" style="
+    font-size: 3.2rem;
+    font-weight: 900;
+    background: linear-gradient(90deg, #005fa3 30%, #00c6fb 100%);
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    letter-spacing: 2.5px;
+    margin-bottom: 1.5rem;
+    font-family: 'Poppins', sans-serif;
+    -webkit-text-stroke: 2px #222;
+    text-stroke: 2px #222;
+    text-shadow:
+        0 6px 32px rgba(0, 122, 204, 0.18),
+        0 2px 8px rgba(0,0,0,0.10),
+        1px 1px 2px #222,
+        -1px -1px 2px #222;
+">SISTEMA DE ACOMPANHAMENTO ESCOLAR</div>
                 <div class="presentation-desc">
                     Gerencie relatórios pedagógicos de forma simples, segura e eficiente.<br>
                     <ul style="margin: 1rem 0 2rem 1.2rem; color: #007acc; font-weight: 500;">
