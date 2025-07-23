@@ -13,7 +13,8 @@ Este exemplo usa PHP com MySQL para gerenciar usuários e relatórios de aulas.
 - Login e sessão.
 - Coordenador registra data, tipo de relatório, professor acompanhado, observações e pode anexar arquivos PDF ou DOCX. Cada relatório fica salvo em `uploads/<id_da_escola>`.
 - Superintendente visualiza todos os registros de sua escola.
-- Administrador pode cadastrar novas escolas, ver usuários e consultar todos os relatórios.
+- Administrador pode cadastrar ou remover escolas, gerenciar usuários e consultar todos os relatórios.
+- Coordenadores são encaminhados diretamente para o envio de relatórios após o cadastro.
 
 Este é apenas um exemplo básico para demonstrar o fluxo descrito. Em produção, lembre-se de habilitar validações adicionais e medidas de segurança.
 

@@ -8,7 +8,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $school_id = $_POST['school_id'] ?: null;
     $stmt = $pdo->prepare('INSERT INTO users (name, email, password, role, school_id) VALUES (?,?,?,?,?)');
     if ($stmt->execute([$name, $email, $password, $role, $school_id])) {
-        echo 'Cadastro realizado com sucesso. <a href="index.php">Fazer login</a>';
+        $user_id = $pdo->lastInsertId();
+        if ($role === 'coordinator') {
+            session_start();
+            $_SESSION['user_id'] = $user_id;
+            $_SESSION['role'] = $role;
+            $_SESSION['school_id'] = $school_id;
+            header('Location: upload_report.php');
+            exit;
+        } else {
+            echo 'Cadastro realizado com sucesso. <a href="index.php">Fazer login</a>';
+        }
     } else {
         echo 'Erro ao cadastrar.';
     }
