@@ -150,7 +150,7 @@ if (isset($_SESSION['user_id'])) {
                 </div>
             </div>
             <div class="presentation-image">
-                <img src="assets/login-image.svg" alt="Acompanhamento Escolar">
+                <img src="assets/loguin-image.svg" alt="Acompanhamento Escolar">
             </div>
         </div>
     </div>
