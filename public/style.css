@@ -5,46 +5,37 @@
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
-    background-color: #f0f2f5;
+    background: linear-gradient(135deg, #007acc 0%, #00c6fb 100%);
+    min-height: 100vh;
     color: #333;
-    transition: all 0.3s ease;
-}
-
-@media (prefers-color-scheme: dark) {
-    body {
-        background-color: #1c1c1e;
-        color: #f2f2f2;
-    }
-    .login-wrapper {
-        background-color: #2c2c2e;
-    }
-    .login-left {
-        background-color: #2c2c2e;
-    }
-    input, button {
-        background-color: #1c1c1e;
-        color: #fff;
-    }
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .login-wrapper {
     display: flex;
-    height: 100vh;
-    width: 100%;
+    min-height: 70vh;
+    width: 900px;
+    max-width: 98vw;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+    overflow: hidden;
 }
 
 .login-left {
     flex: 1;
-    padding: 3rem;
+    padding: 3rem 2.5rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background: white;
+    background: #fff;
 }
 
 .login-right {
     flex: 1;
-    background: #007acc;
+    background: linear-gradient(135deg, #007acc 0%, #00c6fb 100%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -52,65 +43,134 @@ body {
 
 .login-right img {
     width: 80%;
-    max-width: 400px;
+    max-width: 320px;
+    filter: drop-shadow(0 4px 16px rgba(0,0,0,0.12));
 }
 
 form {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 1.2rem;
+    margin-top: 1.5rem;
+}
+
+h2 {
+    margin-bottom: 0.5rem;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #007acc;
+    letter-spacing: 1px;
 }
 
 label {
     font-weight: 600;
+    color: #333;
 }
 
 input {
-    padding: 0.8rem;
-    border: 1px solid #ccc;
+    padding: 0.9rem;
+    border: 1px solid #d0d7de;
     border-radius: 8px;
     font-size: 1rem;
+    background: #f7fafd;
+    transition: border 0.2s;
+}
+
+input:focus {
+    border-color: #007acc;
+    outline: none;
 }
 
 button {
-    padding: 0.9rem;
-    background-color: #007acc;
-    color: white;
+    padding: 1rem;
+    background: linear-gradient(90deg, #007acc 60%, #00c6fb 100%);
+    color: #fff;
     font-weight: bold;
-    font-size: 1rem;
+    font-size: 1.1rem;
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    transition: background 0.3s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transition: background 0.3s, box-shadow 0.3s;
 }
 
 button:hover {
-    background-color: #005fa3;
-}
-
-h2 {
-    margin-bottom: 1rem;
+    background: linear-gradient(90deg, #005fa3 60%, #00a6d6 100%);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
 }
 
 .footer-text {
     margin-top: 2rem;
     text-align: center;
-    font-size: 0.9rem;
-    color: #777;
+    font-size: 0.95rem;
+    color: #888;
 }
 
-.error-msg {
-    color: red;
+.error-msg, .error {
+    color: #e53935;
+    background: #ffeaea;
+    border: 1px solid #e53935;
+    border-radius: 6px;
+    padding: 0.7rem 1rem;
     margin-bottom: 1rem;
+    text-align: center;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
     .login-wrapper {
         flex-direction: column;
+        width: 98vw;
+        min-height: unset;
     }
     .login-right {
         display: none;
     }
+    .login-left {
+        padding: 2rem 1rem;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background: linear-gradient(135deg, #1c1c1e 0%, #232526 100%);
+        color: #f2f2f2;
+    }
+    .login-wrapper {
+        background: #232526;
+        box-shadow: 0 8px 32px rgba(0,0,0,0.38);
+    }
+    .login-left {
+        background: #232526;
+        color: #f2f2f2;
+    }
+    input, button {
+        background-color: #1c1c1e;
+        color: #fff;
+        border-color: #333;
+    }
+    .footer-text {
+        color: #aaa;
+    }
 }
 
 /* Fim do arquivo */
+
+<div class="login-wrapper">
+  <div class="login-left">
+    <h2>Login no Sistema</h2>
+    <!-- Mensagem de erro, se houver -->
+    <form action="login_process.php" method="POST">
+      <label for="email">Email:</label>
+      <input type="email" name="email" id="email" required>
+      <label for="senha">Senha:</label>
+      <input type="password" name="senha" id="senha" required>
+      <button type="submit">Entrar</button>
+    </form>
+    <div class="footer-text">
+      © 2025 Sistema de Acompanhamento. Todos os direitos reservados.
+    </div>
+  </div>
+  <div class="login-right">
+    <img src="assets/logo.png" alt="Logo do Sistema">
+  </div>
+</div>
