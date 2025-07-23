@@ -37,3 +37,12 @@ http://localhost/phpmyadmin/index.php?route=/database/structure&db=sis
 ```
 
 Utilize as mesmas credenciais definidas em `config.php` (por padrão, usuário `root` sem senha). Assim é possível visualizar e editar as tabelas `schools`, `users` e `reports` diretamente pela interface web.
+
+## Executar localmente
+Após configurar o banco de dados e os arquivos do projeto, execute um servidor PHP simples apontando para a pasta `public`:
+
+```bash
+php -S localhost:8000 -t public
+```
+
+Em seguida abra `http://localhost:8000` no navegador para acessar a tela de login e realizar os cadastros.
