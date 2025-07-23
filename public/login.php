@@ -79,6 +79,21 @@ if (isset($_SESSION['user_id'])) {
       font-size: 0.95rem;
       color: #888;
     }
+    select {
+      padding: 0.9rem;
+      border: 1px solid #d0d7de;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      background: #f7fafd;
+      width: 100%;
+      margin-bottom: 0.5rem;
+    }
+    #role, #school_id {
+      padding: 0.9rem;
+      font-size: 1.1rem;
+      border-radius: 8px;
+      width: 100%;
+    }
     @media (max-width: 500px) {
       .login-wrapper {
         padding: 1.2rem 0.5rem;
