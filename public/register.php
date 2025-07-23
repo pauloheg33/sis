@@ -54,6 +54,21 @@ $schools = $pdo->query('SELECT id, name FROM schools')->fetchAll();
             text-shadow: 0 2px 12px rgba(229,57,53,0.10);
             font-family: 'Poppins', sans-serif;
         }
+        select, #role, #school_id {
+            padding: 0.9rem;
+            border: 3px solid #007acc; /* borda mais grossa */
+            border-radius: 8px;
+            font-size: 1.1rem;
+            background: #f7fafd;
+            width: 100%;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            transition: border 0.2s;
+        }
+        select:focus, #role:focus, #school_id:focus {
+            border-color: #005fa3;
+            outline: none;
+        }
     </style>
 </head>
 <body>
